@@ -14,9 +14,16 @@
 */
 package mx.tis.com.application.dto;
 
+import lombok.Data;
+
 /**
  * The Class InitialInvestmentDto.
  */
+
+/**
+ * Instantiates a new initial investment dto.
+ */
+@Data
 public class InitialInvestmentDto {
   
   /** The initial investment. */
@@ -33,96 +40,6 @@ public class InitialInvestmentDto {
   
   /** The investment years. */
   private Integer investmentYears;
-
-  /**
-   * Gets the initial investment.
-   *
-   * @return the initial investment
-   */
-  public Double getInitialInvestment() {
-    return initialInvestment;
-  }
-
-  /**
-   * Sets the initial investment.
-   *
-   * @param initialInvestment the new initial investment
-   */
-  public void setInitialInvestment(Double initialInvestment) {
-    this.initialInvestment = initialInvestment;
-  }
-
-  /**
-   * Gets the yearly input.
-   *
-   * @return the yearly input
-   */
-  public Double getYearlyInput() {
-    return yearlyInput;
-  }
-
-  /**
-   * Sets the yearly input.
-   *
-   * @param yearlyInput the new yearly input
-   */
-  public void setYearlyInput(Double yearlyInput) {
-    this.yearlyInput = yearlyInput;
-  }
-
-  /**
-   * Gets the yearly input increment.
-   *
-   * @return the yearly input increment
-   */
-  public Integer getYearlyInputIncrement() {
-    return yearlyInputIncrement;
-  }
-
-  /**
-   * Sets the yearly input increment.
-   *
-   * @param yearlyInputIncrement the new yearly input increment
-   */
-  public void setYearlyInputIncrement(Integer yearlyInputIncrement) {
-    this.yearlyInputIncrement = yearlyInputIncrement;
-  }
-
-  /**
-   * Gets the investment yield.
-   *
-   * @return the investment yield
-   */
-  public Float getInvestmentYield() {
-    return investmentYield;
-  }
-
-  /**
-   * Sets the investment yield.
-   *
-   * @param investmentYield the new investment yield
-   */
-  public void setInvestmentYield(Float investmentYield) {
-    this.investmentYield = investmentYield;
-  }
-
-  /**
-   * Gets the investment years.
-   *
-   * @return the investment years
-   */
-  public Integer getInvestmentYears() {
-    return investmentYears;
-  }
-
-  /**
-   * Sets the investment years.
-   *
-   * @param investmentYears the new investment years
-   */
-  public void setInvestmentYears(Integer investmentYears) {
-    this.investmentYears = investmentYears;
-  }
 
 
 }
