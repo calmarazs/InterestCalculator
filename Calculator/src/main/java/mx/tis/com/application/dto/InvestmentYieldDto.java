@@ -32,6 +32,9 @@ public class InvestmentYieldDto {
   /** The yearly input. */
   private Double yearlyInput;
   
+  /** The initial investment. */
+  private Double initialInvestment;
+  
   /** The investment yield. */
   private Double investmentYield;
   

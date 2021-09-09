@@ -48,6 +48,7 @@ public class CompoundInterestCalculatorImpl implements CompoundInterestCalculato
             .getYearlyInputIncrement()));
         initialBalance=investmentYieldArray.get(i-1).getFinalBalance();
       }
+      investmentYieldDto.setInitialInvestment(initialBalance);
       
       investmentYieldDto.setInvestmentYield(calculateInvestment(initialBalance,
           investmentYieldDto.getYearlyInput(),initialInvestment.getInvestmentYield()));
@@ -58,7 +59,7 @@ public class CompoundInterestCalculatorImpl implements CompoundInterestCalculato
       investmentYieldArray.add(i,investmentYieldDto);
     }
     return investmentYieldArray;
-  }
+  } 
   
   /**
    * Calculate yearly input.
@@ -103,8 +104,30 @@ public class CompoundInterestCalculatorImpl implements CompoundInterestCalculato
    */
   @Override
   public boolean validateInput(InitialInvestmentDto initialInvestment) {
+    this.setDefaults(initialInvestment);
+    
     return (initialInvestment.getInitialInvestment()<1000 || initialInvestment.getYearlyInput()<0 ||
-        initialInvestment.getYearlyInputIncrement()<0 || initialInvestment.getInvestmentYield()<0);
+        initialInvestment.getYearlyInputIncrement()<0 || initialInvestment.getInvestmentYield()<=0 ||
+        initialInvestment.getInvestmentYears()<=0);
+  }
+  
+  /**
+   * Sets the defaults.
+   *
+   * @param initialInvestment the new defaults
+   */
+  private void setDefaults(InitialInvestmentDto initialInvestment) {
+    Double yearlyInput = initialInvestment.getYearlyInput();
+    yearlyInput=yearlyInput==null ? 0.0: yearlyInput;
+    initialInvestment.setYearlyInput(yearlyInput);
+    
+    Integer yearlyInputIncrement = initialInvestment.getYearlyInputIncrement();
+    yearlyInputIncrement=yearlyInputIncrement==null ? 0: yearlyInputIncrement;
+    initialInvestment.setYearlyInputIncrement(yearlyInputIncrement);
+    
+    Float investmentYield = initialInvestment.getInvestmentYield();
+    investmentYield=investmentYield==null ? 0: investmentYield;
+    initialInvestment.setInvestmentYield(investmentYield);
   }
   
 }

@@ -4,7 +4,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>practicas-cloud</groupId>
-	<artifactId>baseline-service</artifactId>
+	<artifactId>interest-calculator</artifactId>
 	<version>1.0.0</version>
 
 	<parent>
@@ -60,7 +60,11 @@
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
 
 	</dependencies>
 
