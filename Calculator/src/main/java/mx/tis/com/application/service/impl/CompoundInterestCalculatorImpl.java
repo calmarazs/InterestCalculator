@@ -18,12 +18,15 @@ package mx.tis.com.application.service.impl;
 import mx.tis.com.application.dto.InitialInvestmentDto;
 import mx.tis.com.application.dto.InvestmentYieldDto;
 import mx.tis.com.application.service.CompoundInterestCalculator;
+import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * The Class CompoundInterestCalculatorImpl.
  */
+@Service
 public class CompoundInterestCalculatorImpl implements CompoundInterestCalculator{
   
   /**
